@@ -86,6 +86,14 @@ app.post('/upload', upload.single('imagem'), (req, res) => {
 
 // Página de imagem rastreável
 app.get('/imagem/:id', (req, res) => {
+  const userAgent = req.headers['user-agent'] || '';
+  const isBot = /facebookexternalhit|Instagram|WhatsApp|twitterbot|discordbot|bot|crawler/i.test(userAgent);
+
+  // Bloqueia bots
+  if (isBot) {
+    return res.status(403).send('Acesso negado');
+  }
+
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   const geo = geoip.lookup(ip);
   const acesso = {
@@ -102,7 +110,10 @@ app.get('/imagem/:id', (req, res) => {
 
   const imgPath = path.join(__dirname, 'public/uploads', req.params.id);
   if (fs.existsSync(imgPath)) {
-    res.sendFile(imgPath);
+    // Força o download em vez de exibir diretamente
+    res.set('Content-Type', 'application/octet-stream');
+    res.set('Content-Disposition', `attachment; filename="${req.params.id}"`);
+    fs.createReadStream(imgPath).pipe(res);
   } else {
     res.status(404).send('Imagem não encontrada');
   }
