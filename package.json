@@ -1,14 +1,14 @@
 {
-  "name": "galeria",
+  "name": "galeria-rastreio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Painel com rastreamento de acesso por IP e upload de imagens",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["rastreamento", "upload", "express", "painel", "ip", "geolocalizacao"],
+  "author": "Seu Nome",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",

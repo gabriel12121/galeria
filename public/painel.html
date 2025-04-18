@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de Rastreamento</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+    h1 { margin-bottom: 20px; }
+    table { border-collapse: collapse; width: 100%; background: white; }
+    th, td { padding: 10px; border: 1px solid #ddd; }
+    th { background: #333; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    .upload { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Painel de Rastreamento</h1>
+
+  <div class="upload">
+    <form action="/upload" method="post" enctype="multipart/form-data" target="_blank">
+      <input type="file" name="imagem" required />
+      <button type="submit">Enviar imagem</button>
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Imagem</th>
+        <th>Data</th>
+        <th>IP</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>País</th>
+        <th>Provedor</th>
+      </tr>
+    </thead>
+    <tbody id="tabela">
+      <tr><td colspan="7">Carregando...</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    fetch("/api/acessos")
+      .then(res => res.json())
+      .then(dados => {
+        const tabela = document.getElementById("tabela");
+        tabela.innerHTML = "";
+        dados.forEach(item => {
+          tabela.innerHTML += `
+            <tr>
+              <td><a href="/imagem/${item.imagem}" target="_blank">${item.imagem}</a></td>
+              <td>${new Date(item.data).toLocaleString()}</td>
+              <td>${item.ip}</td>
+              <td>${item.cidade || "-"}</td>
+              <td>${item.estado || "-"}</td>
+              <td>${item.pais || "-"}</td>
+              <td>${item.provedor || "-"}</td>
+            </tr>
+          `;
+        });
+      });
+  </script>
+</body>
+</html>
