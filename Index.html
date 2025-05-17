@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Collaborate Flow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center">
+            <span class="text-xl font-bold text-blue-600">Pro-Collaborate</span>
+            <span class="ml-2 text-sm bg-blue-100 text-blue-600 px-2 py-1 rounded">FLOW</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+            <a href="#" class="text-gray-600 hover:text-blue-600">Features</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600">Solutions</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600">Resources</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600">Pricing</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-gray-600 hover:text-blue-600 hidden md:block">Log in</a>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Get started</button>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 shadow-md">
+        <a href="#" class="block py-2 text-gray-600 hover:text-blue-600">Features</a>
+        <a href="#" class="block py-2 text-gray-600 hover:text-blue-600">Solutions</a>
+        <a href="#" class="block py-2 text-gray-600 hover:text-blue-600">Resources</a>
+        <a href="#" class="block py-2 text-gray-600 hover:text-blue-600">Pricing</a>
+        <a href="#" class="block py-2 text-gray-600 hover:text-blue-600">Log in</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Streamline Your Team's Workflow</h1>
+                <p class="text-lg text-gray-600 mb-8">Pro-Collaborate Flow helps teams work smarter with intuitive task management, seamless collaboration, and powerful automation.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">Start Free Trial</button>
+                    <button class="border border-gray-300 text-gray-700 px-6 py-3 rounded-md hover:bg-gray-50 transition flex items-center justify-center">
+                        <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                    </button>
+                </div>
+                <div class="mt-8 flex items-center">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Trusted by 10,000+ teams worldwide</p>
+                        <div class="flex items-center">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-1 text-sm text-gray-600">4.9/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="text-sm text-gray-500">Project Dashboard</div>
+                    </div>
+                    <div class="h-64 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg mb-4"></div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-blue-100 p-2 rounded-lg">
+                            <div class="text-xs text-blue-800 mb-1">To Do</div>
+                            <div class="h-2 bg-blue-200 rounded-full mb-1"></div>
+                            <div class="text-xs text-blue-800">3 tasks</div>
+                        </div>
+                        <div class="bg-purple-100 p-2 rounded-lg">
+                            <div class="text-xs text-purple-800 mb-1">In Progress</div>
+                            <div class="h-2 bg-purple-200 rounded-full mb-1"></div>
+                            <div class="text-xs text-purple-800">5 tasks</div>
+                        </div>
+                        <div class="bg-green-100 p-2 rounded-lg">
+                            <div class="text-xs text-green-800 mb-1">Done</div>
+                            <div class="h-2 bg-green-200 rounded-full mb-1"></div>
+                            <div class="text-xs text-green-800">8 tasks</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-yellow-100 p-4 rounded-lg shadow-md w-32 hidden md:block">
+                    <div class="text-yellow-800 text-sm font-medium">New feature!</div>
+                    <div class="text-xs text-yellow-600">Automated reports</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Powerful Features for Your Team</h2>
+            <p class="text-gray-600">Everything you need to manage projects, collaborate with your team, and deliver work on time.</p>
+        </div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-xl hover:shadow-md transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-tasks text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Task Management</h3>
+                <p class="text-gray-600">Organize, prioritize, and track tasks with intuitive drag-and-drop interface.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl hover:shadow-md transition">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-users text-purple-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Team Collaboration</h3>
+                <p class="text-gray-600">Real-time updates, comments, and file sharing for seamless teamwork.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl hover:shadow-md transition">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-robot text-green-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Automation</h3>
+                <p class="text-gray-600">Automate repetitive tasks and workflows to save time and reduce errors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Trusted by Teams Worldwide</h2>
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <div class="flex items-center mb-6">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" class="w-12 h-12 rounded-full mr-4" alt="User">
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                        <p class="text-gray-600">Project Manager at TechCorp</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-6">"Pro-Collaborate Flow has transformed how our team works. We've reduced meeting times by 40% and increased project completion rates significantly. The automation features alone have saved us hundreds of hours."</p>
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Workflow?</h2>
+            <p class="text-blue-100 mb-8">Join thousands of teams who are already working smarter with Pro-Collaborate Flow.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-blue-600 px-6 py-3 rounded-md hover:bg-gray-100 transition">Start Free Trial</button>
+                <button class="border border-white text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="text-white font-semibold mb-4">Product</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white">Features</a></li>
+                    <li><a href="#" class="hover:text-white">Pricing</a></li>
+                    <li><a href="#" class="hover:text-white">Integrations</a></li>
+                    <li><a href="#" class="hover:text-white">Updates</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white">Blog</a></li>
+                    <li><a href="#" class="hover:text-white">Help Center</a></li>
+                    <li><a href="#" class="hover:text-white">Tutorials</a></li>
+                    <li><a href="#" class="hover:text-white">Community</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Company</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white">About</a></li>
+                    <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <li><a href="#" class="hover:text-white">Privacy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-600">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-600">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-600">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-600">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p class="text-sm">Subscribe to our newsletter</p>
+                <div class="mt-2 flex">
+                    <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-3 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-blue-500 w-full">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto pt-8 mt-8 border-t border-gray-800 text-center text-sm">
+            <p>© 2023 Pro-Collaborate Flow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
